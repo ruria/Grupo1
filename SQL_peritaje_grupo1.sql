@@ -8,6 +8,8 @@
 DROP DATABASE IF exists PERITAJEGRUPO1
 CREATE DATABASE PERITAJEGRUPO1;
 
+USE PERITAJEGRUPO1;
+GO
 -- Creamos tabla de Empresa aseguradoras
 
 drop table if exists ASEGURADORA;
@@ -57,6 +59,14 @@ CREATE TABLE RAMO(
         PRIMARY KEY (IdRamo)
 );
 
+drop table if exists ESTADO;
+CREATE TABLE ESTADO(
+        IdEstado int not null,
+		Tipo varchar(15),
+		Fecha datetime,
+
+        PRIMARY KEY (IdEstado)
+);
 
 drop table if exists SINIESTRO;
 CREATE TABLE SINIESTRO(
@@ -71,7 +81,22 @@ CREATE TABLE SINIESTRO(
 		Fecha_apertura datetime,
 		Fecha_cierre datetime,
 		IdPerito int not null,
-		PRIMARY KEY (IdSiniestro)
+		PRIMARY KEY (IdSiniestro),
+		CONSTRAINT FK_IdCliente FOREIGN KEY (IdCliente)
+			REFERENCES CLIENTE (IdCliente)
+			on update cascade,
+	    CONSTRAINT FK_IdAseguradora FOREIGN KEY (IdAseguradora)
+			REFERENCES ASEGURADORA (IdAseguradora)
+			on update cascade,
+		CONSTRAINT FK_IdEstado FOREIGN KEY (IdEstado)
+			REFERENCES ESTADO (IdEstado)
+			on update cascade,
+		CONSTRAINT FK_IdRamo FOREIGN KEY (IdRamo)
+			REFERENCES RAMO (IdRamo)
+			on update cascade,
+		CONSTRAINT FK_IdPerito FOREIGN KEY (IdPerito)
+			REFERENCES PERITO (IdPerito)
+			on update cascade
 );
 
 
