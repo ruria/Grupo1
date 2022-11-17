@@ -5,12 +5,12 @@
 -- Marcela Rojas
 -- Rafa Martinez
 
-IF DATABASE PERITAJEGRUPO1 EXISTS DROP PERITAJEGRUPO1
+DROP DATABASE IF exists PERITAJEGRUPO1
 CREATE DATABASE PERITAJEGRUPO1;
 
 -- Creamos tabla de Empresa aseguradoras
 
-IF TABLE ASEGURADORA EXISTS DROP ASEGURADORA
+drop table if exists ASEGURADORA
 CREATE TABLE ASEGURADORA(
         IDaseguradora int not null,
 		cif varchar(15),
