@@ -1,8 +1,9 @@
 -- TRABAJO ASEGURADORAS GRUPO 1
 -- COMPONENTES:
--- Joaquín González Sordo
+-- Joaquï¿½n Gonzï¿½lez Sordo
 -- Pablo Ruiz
 -- Marcela Rojas
+-- Rafa Martinez
 
 IF DATABASE PERITAJEGRUPO1 EXISTS DROP PERITAJEGRUPO1
 CREATE DATABASE PERITAJEGRUPO1;
