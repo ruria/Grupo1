@@ -72,6 +72,7 @@ CREATE TABLE SINIESTRO(
 		Fecha_cierre datetime,
 		IdPerito int not null,
 		PRIMARY KEY (IdSiniestro)
+);
 
 
 
