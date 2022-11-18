@@ -301,3 +301,27 @@ INSERT [dbo].[PERITO] ([IdPerito], [DNI], [Nombre], [Contacto], [telefono], [num
 VALUES (4, N'N9426741X', 'Marcela Rojas', 'Jose de Escandon 14', '622744124', '')
 ;
 >>>>>>> 47ad574417f7a696f62f406a8b64956e37117840
+
+
+--INSERTO DATOS DE LOS ESTADOS:
+
+INSERT INTO SINIESTRO
+VALUES ('1','11','1','1','1','2','Incencio de cocina','20220901','20221001','','1');
+INSERT INTO SINIESTRO
+VALUES ('2','12','2','1','2','1','Infección respiratoria','20220902','20221002','','2');
+INSERT INTO SINIESTRO
+VALUES ('3','13','3','1','3','2','Derrumbe de salón','20220903','20221003','','3');
+INSERT INTO SINIESTRO
+VALUES ('4','14','4','1','4','3','Pinchazo de ruedas','20220904','20221004','','4');
+INSERT INTO SINIESTRO
+VALUES ('5','11','5','1','5','1','Rotura de cadera','20220905','20221005','','5');
+INSERT INTO SINIESTRO
+VALUES ('6','12','6','1','5','2','Inundación de baño','20220906','20221006','','6');
+INSERT INTO SINIESTRO
+VALUES ('7','13','7','1','7','3','Rotura de parabrisas','20220907','20221007','','7');
+INSERT INTO SINIESTRO
+VALUES ('8','14','8','1','8','1','Rotura de tibia','20220908','20221008','','8');
+INSERT INTO SINIESTRO
+VALUES ('9','11','9','1','9','2','Incendio de dormitorio','20220909','20221009','','9');
+INSERT INTO SINIESTRO
+VALUES ('10','12','10','1','10','3','Incendio del motor','20220910','20221010','','10');
