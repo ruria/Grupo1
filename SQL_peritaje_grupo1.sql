@@ -32,6 +32,16 @@ CREATE TABLE CLIENTE(
 		PRIMARY KEY (IdCliente)
 );
 
+drop table if exists ASEGURADO;
+CREATE TABLE ASEGURADO(
+        IdAsegurado int not null,
+		dni varchar(15),
+		Nombre varchar(30) not null,
+		contacto varchar(30),
+		telefono varchar(15),
+		PRIMARY KEY (IdAsegurado)
+);
+
 drop table if exists PERITO;
 CREATE TABLE PERITO(
         IdPerito int not null,
@@ -51,6 +61,7 @@ CREATE TABLE COBERTURA(
 		PRIMARY KEY (IdCobertura)
 );
 
+
 drop table if exists RAMO;
 CREATE TABLE RAMO(
         IdRamo int not null,
@@ -58,6 +69,7 @@ CREATE TABLE RAMO(
 
         PRIMARY KEY (IdRamo)
 );
+
 
 drop table if exists ESTADO;
 CREATE TABLE ESTADO(
@@ -68,6 +80,22 @@ CREATE TABLE ESTADO(
         PRIMARY KEY (IdEstado)
 );
 
+
+drop table if exists SINIESTRO_COBERTURA;
+CREATE TABLE SINIESTRO_COBERTURA(
+        IdSinCob int not null,
+		IdSiniestro int not null,
+		IdCobertura int not null,
+        PRIMARY KEY (IdSinCob),
+		CONSTRAINT FK_IdSiniestro FOREIGN KEY (IdSiniestro)
+			REFERENCES SINIESTRO (IdSiniestro)
+			on update cascade,
+	    CONSTRAINT FK_IdCobertura FOREIGN KEY (IdCobertura)
+			REFERENCES COBERTURA (IdCobertura)
+			on update cascade
+);
+
+
 drop table if exists SINIESTRO;
 CREATE TABLE SINIESTRO(
         IdSiniestro int not null,
@@ -75,6 +103,7 @@ CREATE TABLE SINIESTRO(
 		IdAseguradora int not null,
 		-- IdPoliza int not null,
 		IdEstado int not null,
+		IdAsegurado int not null,
 		IdRamo int not null,
 		descripcion varchar(300),
 		Fecha_siniestro datetime,
@@ -96,6 +125,9 @@ CREATE TABLE SINIESTRO(
 			on update cascade,
 		CONSTRAINT FK_IdPerito FOREIGN KEY (IdPerito)
 			REFERENCES PERITO (IdPerito)
+			on update cascade,
+		CONSTRAINT FK_IdAsegurado FOREIGN KEY (IdAsegurado)
+			REFERENCES ASEGURADO (IdAsegurado)
 			on update cascade
 );
 
