@@ -132,5 +132,21 @@ CREATE TABLE SINIESTRO(
 );
 
 
+INSERT [dbo].[RAMO] ([IdRamo], [Tipo]) 
+VALUES (1, N'Vida')
+INSERT [dbo].[RAMO] ([IdRamo], [Tipo]) 
+VALUES (2, N'Hogar')
+INSERT [dbo].[RAMO] ([IdRamo], [Tipo]) 
+VALUES (3, N'Coche')
+;
 
 
+INSERT [dbo].[PERITO] ([IdPerito], [DNI], [Nombre], [Contacto], [telefono], [num_casos]) 
+VALUES (1, N'Y6254479P', 'Rafa Martinez', 'Davila 15', '732745168', '') 
+INSERT [dbo].[PERITO] ([IdPerito], [DNI], [Nombre], [Contacto], [telefono], [num_casos]) 
+VALUES (2, N'O5229934I', 'Joaquin Gonzalez', 'Los Castros 8', '677122364', '')
+INSERT [dbo].[PERITO] ([IdPerito], [DNI], [Nombre], [Contacto], [telefono], [num_casos]) 
+VALUES (3, N'Y5743219T', 'Pablo Ruiz', 'Guevara 18', '645228340', '')
+INSERT [dbo].[PERITO] ([IdPerito], [DNI], [Nombre], [Contacto], [telefono], [num_casos]) 
+VALUES (4, N'N9426741X', 'Marcela Rojas', 'Jose de Escandon 14', '622744124', '')
+;
