@@ -302,6 +302,7 @@ VALUES (4, N'N9426741X', 'Marcela Rojas', 'Jose de Escandon 14', '622744124', ''
 ;
 >>>>>>> 47ad574417f7a696f62f406a8b64956e37117840
 
+<<<<<<< HEAD
 
 --INSERTO DATOS DE LOS ESTADOS:
 
@@ -325,3 +326,29 @@ INSERT INTO SINIESTRO
 VALUES ('9','11','9','1','9','2','Incendio de dormitorio','20220909','20221009','','9');
 INSERT INTO SINIESTRO
 VALUES ('10','12','10','1','10','3','Incendio del motor','20220910','20221010','','10');
+=======
+set dateformat ymd;
+
+insert into SINIESTRO
+  values('11','12','8','1','3','2','Inundacion del piso de arriba','20220210','20221010','','1');
+insert into SINIESTRO
+  values('12','14','5','1','1','1','Inflamacion del higado','20220510','20221012','','2');
+insert into SINIESTRO
+  values('13','13','2','1','6','3','Atropello a peaton','20220810','20221013','','3');
+insert into SINIESTRO
+  values('14','11','7','1','2','2','Incencio en cocina','20220910','20221113','','1');
+insert into SINIESTRO
+  values('15','12','6','1','1','1','Parálisis en pierna','20220710','20221110','','4');
+ insert into SINIESTRO
+  values('16','14','5','1','8','3','Choque frontal cruce','20220610','20221109','','1');
+ insert into SINIESTRO
+  values('17','12','8','1','20','2','Robo de joyas en casa','20220811','20221108','','2');
+insert into SINIESTRO
+  values('18','13','1','1','18','1','Gripe prolongada','20220911','20221106','','1');
+ insert into SINIESTRO
+  values('19','14','4','1','12','2','Incendio en dormitorio','20220721','20221103','','3');
+insert into SINIESTRO
+  values('20','13','1','1','15','1','Infarto corazon','20220911','20221106','','4');
+
+
+>>>>>>> c45a30636c8611d5b0647d8d2147ac048cca71b9
