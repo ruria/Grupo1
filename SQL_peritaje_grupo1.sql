@@ -352,3 +352,35 @@ insert into SINIESTRO
 
 
 >>>>>>> c45a30636c8611d5b0647d8d2147ac048cca71b9
+
+
+--inserto datos tabla Siniestro del 21 al 30 perito 4
+
+INSERT into SINIESTRO
+VALUES (21, '12', '2', '1', '25', '2', 'Incendio', '20220305', '20220307', '', '4')
+INSERT into SINIESTRO
+VALUES (22, '11', '1', '2', '1', '1', 'Accidente de coche', '20220905', '20220908', '', '4')
+INSERT into SINIESTRO
+VALUES (23, '13', '6', '1', '11', '2', 'Choque', '202201105', '20221109', '', '4')
+INSERT into SINIESTRO
+VALUES (24, '13', '2', '3', '13', '3', 'Incendio', '20220605', '20220612', '', '4')
+INSERT into SINIESTRO
+VALUES (25, '14', '4', '1', '5', '2', 'Rotura cañerias', '20220404', '20220407', '', '4')
+INSERT into SINIESTRO
+VALUES (26, '11', '10', '1', '3', '3', 'Incendio', '20220101', '20220107', '', '4')
+INSERT into SINIESTRO
+VALUES (27, '11', '9', '3', '6', '1', 'Incendio', '20220705', '20220711', '', '4')
+INSERT into SINIESTRO
+VALUES (28, '12', '9', '1', '22', '2', 'Rotura de tejado', '20221001', '20221007', '', '4')
+INSERT into SINIESTRO
+VALUES (29, '12', '1', '2', '13', '2', 'Incendio', '20220620', '20220625', '', '4')
+INSERT into SINIESTRO
+VALUES (30, '14', '3', '1', '7', '3', 'Rotura de tejado', '20221115', '20221117', '', '4')
+
+
+
+
+
+
+
+
