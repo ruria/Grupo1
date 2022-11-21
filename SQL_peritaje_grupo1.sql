@@ -315,17 +315,17 @@ VALUES ('3','13','3','1','3','2','Derrumbe de salón','20220903','20221003','','
 INSERT INTO SINIESTRO
 VALUES ('4','14','4','1','4','3','Pinchazo de ruedas','20220904','20221004','','4');
 INSERT INTO SINIESTRO
-VALUES ('5','11','5','1','5','1','Rotura de cadera','20220905','20221005','','5');
+VALUES ('5','11','5','1','5','1','Rotura de cadera','20220905','20221005','','1');
 INSERT INTO SINIESTRO
-VALUES ('6','12','6','1','5','2','Inundación de baño','20220906','20221006','','6');
+VALUES ('6','12','6','1','5','2','Inundación de baño','20220906','20221006','','1');
 INSERT INTO SINIESTRO
-VALUES ('7','13','7','1','7','3','Rotura de parabrisas','20220907','20221007','','7');
+VALUES ('7','13','7','1','7','3','Rotura de parabrisas','20220907','20221007','','1');
 INSERT INTO SINIESTRO
-VALUES ('8','14','8','1','8','1','Rotura de tibia','20220908','20221008','','8');
+VALUES ('8','14','8','1','8','1','Rotura de tibia','20220908','20221008','','3');
 INSERT INTO SINIESTRO
-VALUES ('9','11','9','1','9','2','Incendio de dormitorio','20220909','20221009','','9');
+VALUES ('9','11','9','1','9','2','Incendio de dormitorio','20220909','20221009','','2');
 INSERT INTO SINIESTRO
-VALUES ('10','12','10','1','10','3','Incendio del motor','20220910','20221010','','10');
+VALUES ('10','12','10','1','10','3','Incendio del motor','20220910','20221010','','1');
 =======
 set dateformat ymd;
 
@@ -353,31 +353,31 @@ insert into SINIESTRO
 
 >>>>>>> c45a30636c8611d5b0647d8d2147ac048cca71b9
 
-
+select * from siniestro
 --inserto datos tabla Siniestro del 21 al 30 perito 4
 
 INSERT into SINIESTRO
-VALUES (21, '12', '2', '1', '25', '2', 'Incendio', '20220305', '20220307', '', '4')
+VALUES (21, '12', '2', '1', '25', '2', 'Incendio', '20220305', '20220307', '', '4');
 INSERT into SINIESTRO
-VALUES (22, '11', '1', '2', '1', '1', 'Accidente de coche', '20220905', '20220908', '', '4')
+VALUES (22, '11', '1', '2', '1', '1', 'Accidente de coche', '20220905', '20220908', '', '4');
 INSERT into SINIESTRO
-VALUES (23, '13', '6', '1', '11', '2', 'Choque', '202201105', '20221109', '', '4')
+VALUES (23, '13', '6', '1', '11', '2', 'Choque', '20221105', '20221109', '', '4');
 INSERT into SINIESTRO
-VALUES (24, '13', '2', '3', '13', '3', 'Incendio', '20220605', '20220612', '', '4')
+VALUES (24, '13', '2', '3', '13', '3', 'Incendio', '20220605', '20220612', '', '4');
 INSERT into SINIESTRO
-VALUES (25, '14', '4', '1', '5', '2', 'Rotura cañerias', '20220404', '20220407', '', '4')
+VALUES ('25', '14', '4', '1', '5', '2', 'Rotura cañerias', '20220404', '20220407', '', '4');
 INSERT into SINIESTRO
-VALUES (26, '11', '10', '1', '3', '3', 'Incendio', '20220101', '20220107', '', '4')
+VALUES ('26', '11', '10', '1', '3', '3', 'Incendio', '20220101', '20220107', '', '4');
 INSERT into SINIESTRO
-VALUES (27, '11', '9', '3', '6', '1', 'Incendio', '20220705', '20220711', '', '4')
+VALUES ('27', '11', '9', '3', '6', '1', 'Incendio', '20220705', '20220711', '', '4');
 INSERT into SINIESTRO
-VALUES (28, '12', '9', '1', '22', '2', 'Rotura de tejado', '20221001', '20221007', '', '4')
+VALUES ('28', '12', '9', '1', '22', '2', 'Rotura de tejado', '20221001', '20221007', '', '4');
 INSERT into SINIESTRO
-VALUES (29, '12', '1', '2', '13', '2', 'Incendio', '20220620', '20220625', '', '4')
+VALUES ('29', '12', '1', '2', '13', '2', 'Incendio', '20220620', '20220625', '', '4');
 INSERT into SINIESTRO
-VALUES (30, '14', '3', '1', '7', '3', 'Rotura de tejado', '20221115', '20221117', '', '4')
+VALUES ('30', '14', '3', '1', '7', '3', 'Rotura de tejado', '20221115', '20221117', '', '4');
 
-
+select * from siniestro
 
 
 
