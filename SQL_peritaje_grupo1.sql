@@ -183,6 +183,50 @@ select*from  SINIESTRO_COBERTURA
 
 -- TabLAS YA CREADAS
 --------------------------------
+--------------------------Creamos los triggers
+if OBJECT_ID('dbo.sumcasper') is not null
+  drop trigger dbo.sumcasper;
+  go
+
+create trigger dbo.sumcasper
+    on dbo.SINIESTRO
+after UPDATE
+
+as 
+begin
+
+   IF (select IdEstado from inserted) = 3 
+     begin
+	   declare @perito as int;
+	   set @perito = (select IdPerito from inserted i);
+	   update perito 
+	     set num_casos = num_casos + 1 
+		 where idPerito = @perito;
+     end
+end;
+
+if OBJECT_ID('dbo.rescasper') is not null
+  drop trigger dbo.rescasper;
+  go
+
+create trigger dbo.rescasper
+    on dbo.SINIESTRO
+after UPDATE
+
+as 
+begin
+
+   IF (select IdEstado from inserted) = 6 
+     begin
+	   declare @perito as int;
+	   set @perito = (select IdPerito from inserted i);
+	   update perito 
+	     set num_casos = num_casos - 1 
+		 where idPerito = @perito;
+     end
+end;
+
+
 -- INTRODUCIMOS VALORES
 
 --INSERTO DATOS DE LOS ASEGURADOS:
