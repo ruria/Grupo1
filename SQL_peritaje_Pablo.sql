@@ -9,7 +9,8 @@ DROP DATABASE IF exists PERITAJEGRUPO1;
 CREATE DATABASE PERITAJEGRUPO1;
 
 USE PERITAJEGRUPO1;
-GO
+GOgit
+
 -- Creamos tabla de Empresa aseguradoras
 
 drop table if exists ASEGURADORA;
@@ -18,6 +19,7 @@ CREATE TABLE ASEGURADORA(
 		cif varchar(15) unique,
 		Nombre varchar(30) not null,
 		contacto varchar(30),
+
 		telefono varchar(15),
 		PRIMARY KEY (IdAseguradora)
 );
@@ -233,7 +235,7 @@ end;
 INSERT INTO ASEGURADO
 VALUES ('1','11111111A','Rafael Nadal','Calle Tenis 5','651248795');
 INSERT INTO ASEGURADO
-VALUES ('2','11111112A','Cristino Ronaldo','Calle Humilde 23','612345677');
+VALUES ('2','11111112A','Cristiano Ronaldo','Calle Humilde 23','612345677');
 INSERT INTO ASEGURADO
 VALUES ('3','11111113A','Manolete','Calle Sol 6','612547985');
 INSERT INTO ASEGURADO
