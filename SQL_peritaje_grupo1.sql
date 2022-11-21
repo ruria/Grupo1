@@ -29,6 +29,7 @@ CREATE TABLE CLIENTE(
 		Nombre varchar(30) not null,
 		contacto varchar(30),
 		telefono varchar(15),
+		dirección varchar (30) not null
 		PRIMARY KEY (IdCliente)
 );
 
@@ -136,6 +137,48 @@ CREATE TABLE SINIESTRO_COBERTURA(
 			on update cascade
 );
 
+drop table if exists FACTURAS;
+CREATE TABLE FACTURAS(
+IdFactura int not null,
+IdSiniestro int not null,
+IdCliente int not null,
+		cif varchar(15) unique,
+		Nombre varchar(30) not null,
+		dirección varchar (30) not null,
+		base_imponible decimal (10,2),
+		iva decimal (10,2),
+		monto_total decimal (10,2),
+		fecha_emisión datetime,
+		fecha_pago datetime, 
+		PRIMARY KEY (IdFactura),
+		CONSTRAINT FK_Factura_IdSiniestro FOREIGN KEY (IdSiniestro)
+			REFERENCES SINIESTRO (IdSiniestro)
+			on update cascade,
+		CONSTRAINT FK_Factura_IdCliente FOREIGN KEY (IdCliente)
+			REFERENCES Cliente (IdCliente)
+			on update no action
+);
+
+
+drop table if exists LÍNEA_FACTURAS;
+CREATE TABLE LÍNEA_FACTURAS(
+IdLínea_Factura int not null,
+IdFactura int not null,
+		cantidad decimal (10,2),
+		descripción varchar (30),
+		precio decimal (10,2),
+		importe decimal (10,2) 
+		PRIMARY KEY (IdLínea_Factura)
+		CONSTRAINT FK_IdFactura FOREIGN KEY (IdFactura)
+			REFERENCES Facturas (IdFactura)
+			on update cascade
+);
+
+
+select*from FACTURAS
+select*from LÍNEA_FACTURAS
+
+
 select*from  SINIESTRO_COBERTURA
 
 -- TabLAS YA CREADAS
@@ -235,13 +278,13 @@ insert into ASEGURADORA
 
 
 insert into CLIENTE 
-    values('11','6345007AB','PERITOS PEREZ','Juan Valcarcel','903804321');
+    values('11','6345007AB','PERITOS PEREZ','Juan Valcarcel','903804321','calle María Blanchard 45');
 insert into CLIENTE 
-    values('12','1345007CB','PERITOS LOPEZ','Sonia Fernandez','983804321');
+    values('12','1345007CB','PERITOS LOPEZ','Sonia Fernandez','983804321','Calle Alta 12');
 insert into CLIENTE 
-    values('13','785007AB','PERITOS GOMEZ','Begoña Hernandez','913804321');
+    values('13','785007AB','PERITOS GOMEZ','Begoña Hernandez','913804321','Avenida Herrera Oria 30');
 insert into CLIENTE 
-    values('14','4945007CB','PERITOS HERNANDEZ','Luis De la Torre','923804321');
+    values('14','4945007CB','PERITOS HERNANDEZ','Luis De la Torre','923804321','Calle Guevara 12');
 
 
 insert into COBERTURA 
