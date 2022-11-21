@@ -97,6 +97,10 @@ CREATE TABLE SINIESTRO(
 		Fecha_apertura datetime,
 		Fecha_cierre datetime,
 		IdPerito int not null,
+		CodPoliza varchar(70),
+		nombre_contacto varchar(70),
+		telefono_contacto varchar (15),
+		direccion_siniestro varchar(100),
 		PRIMARY KEY (IdSiniestro),
 		CONSTRAINT FK_IdCliente FOREIGN KEY (IdCliente)
 			REFERENCES CLIENTE (IdCliente)
@@ -475,3 +479,4 @@ insert into SINIESTRO_COBERTURA
    values('29','26','12');
    insert into SINIESTRO_COBERTURA
    values('30','25','11');
+
