@@ -5,7 +5,7 @@
 -- Marcela Rojas
 -- Rafa Martinez
 
-DROP DATABASE IF exists PERITAJEGRUPO1
+DROP DATABASE IF exists PERITAJEGRUPO1;
 CREATE DATABASE PERITAJEGRUPO1;
 
 USE PERITAJEGRUPO1;
@@ -81,19 +81,6 @@ CREATE TABLE ESTADO(
 );
 
 
-drop table if exists SINIESTRO_COBERTURA;
-CREATE TABLE SINIESTRO_COBERTURA(
-        IdSinCob int not null,
-		IdSiniestro int not null,
-		IdCobertura int not null,
-        PRIMARY KEY (IdSinCob),
-		CONSTRAINT FK_IdSiniestro FOREIGN KEY (IdSiniestro)
-			REFERENCES SINIESTRO (IdSiniestro)
-			on update cascade,
-	    CONSTRAINT FK_IdCobertura FOREIGN KEY (IdCobertura)
-			REFERENCES COBERTURA (IdCobertura)
-			on update cascade
-);
 
 
 drop table if exists SINIESTRO;
@@ -128,6 +115,20 @@ CREATE TABLE SINIESTRO(
 			on update cascade,
 		CONSTRAINT FK_IdAsegurado FOREIGN KEY (IdAsegurado)
 			REFERENCES ASEGURADO (IdAsegurado)
+			on update cascade
+);
+
+drop table if exists SINIESTRO_COBERTURA;
+CREATE TABLE SINIESTRO_COBERTURA(
+        IdSinCob int not null,
+		IdSiniestro int not null,
+		IdCobertura int not null,
+        PRIMARY KEY (IdSinCob),
+		CONSTRAINT FK_IdSiniestro FOREIGN KEY (IdSiniestro)
+			REFERENCES SINIESTRO (IdSiniestro)
+			on update cascade,
+	    CONSTRAINT FK_IdCobertura FOREIGN KEY (IdCobertura)
+			REFERENCES COBERTURA (IdCobertura)
 			on update cascade
 );
 
@@ -187,8 +188,8 @@ VALUES ('24','25111111A','Nikita ni Pongo','Calle la luz 36','651248795');
 INSERT INTO ASEGURADO
 VALUES ('25','26111111A','Angelina Jolie','Calle Racing 30','651248795');
 
-<<<<<<< HEAD
-select * FROM ASEGURADO
+
+
 
 --INSERTO DATOS DE LOS ESTADOS:
 INSERT INTO ESTADO
@@ -204,8 +205,7 @@ VALUES ('5','Cerrado','20080105');
 INSERT INTO ESTADO
 VALUES ('6','Facturado','20080106');
 
-select * FROM ESTADO
-=======
+
 insert into ASEGURADORA 
     values('1','23456687AB','MAPFRE','Pedro Gonzalez','987654321');
 insert into ASEGURADORA 
@@ -300,9 +300,7 @@ VALUES (3, N'Y5743219T', 'Pablo Ruiz', 'Guevara 18', '645228340', '')
 INSERT [dbo].[PERITO] ([IdPerito], [DNI], [Nombre], [Contacto], [telefono], [num_casos]) 
 VALUES (4, N'N9426741X', 'Marcela Rojas', 'Jose de Escandon 14', '622744124', '')
 ;
->>>>>>> 47ad574417f7a696f62f406a8b64956e37117840
 
-<<<<<<< HEAD
 
 --INSERTO DATOS DE LOS ESTADOS:
 
@@ -326,8 +324,7 @@ INSERT INTO SINIESTRO
 VALUES ('9','11','9','1','9','2','Incendio de dormitorio','20220909','20221009','','2');
 INSERT INTO SINIESTRO
 VALUES ('10','12','10','1','10','3','Incendio del motor','20220910','20221010','','1');
-=======
-set dateformat ymd;
+
 
 insert into SINIESTRO
   values('11','12','8','1','3','2','Inundacion del piso de arriba','20220210','20221010','','1');
@@ -351,9 +348,9 @@ insert into SINIESTRO
   values('20','13','1','1','15','1','Infarto corazon','20220911','20221106','','4');
 
 
->>>>>>> c45a30636c8611d5b0647d8d2147ac048cca71b9
 
-select * from siniestro
+
+
 --inserto datos tabla Siniestro del 21 al 30 perito 4
 
 INSERT into SINIESTRO
@@ -377,7 +374,6 @@ VALUES ('29', '12', '1', '2', '13', '2', 'Incendio', '20220620', '20220625', '',
 INSERT into SINIESTRO
 VALUES ('30', '14', '3', '1', '7', '3', 'Rotura de tejado', '20221115', '20221117', '', '4');
 
-select * from siniestro
 
 
 
