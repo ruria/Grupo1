@@ -356,13 +356,13 @@ insert into SINIESTRO
 --inserto datos tabla Siniestro del 21 al 30 perito 4
 
 INSERT into SINIESTRO
-VALUES (21, '12', '2', '1', '25', '2', 'Incendio', '20220305', '20220307', '', '4');
+VALUES ('21', '12', '2', '1', '25', '2', 'Incendio', '20220305', '20220307', '', '4');
 INSERT into SINIESTRO
-VALUES (22, '11', '1', '2', '1', '1', 'Accidente de coche', '20220905', '20220908', '', '4');
+VALUES ('22', '11', '1', '2', '1', '1', 'Accidente de coche', '20220905', '20220908', '', '4');
 INSERT into SINIESTRO
-VALUES (23, '13', '6', '1', '11', '2', 'Choque', '20221105', '20221109', '', '4');
+VALUES ('23', '13', '6', '1', '11', '2', 'Choque', '20221105', '20221109', '', '4');
 INSERT into SINIESTRO
-VALUES (24, '13', '2', '3', '13', '3', 'Incendio', '20220605', '20220612', '', '4');
+VALUES ('24', '13', '2', '3', '13', '3', 'Incendio', '20220605', '20220612', '', '4');
 INSERT into SINIESTRO
 VALUES ('25', '14', '4', '1', '5', '2', 'Rotura cañerias', '20220404', '20220407', '', '4');
 INSERT into SINIESTRO
@@ -455,3 +455,23 @@ insert into SINIESTRO_COBERTURA
 select*from SINIESTRO_COBERTURA
 
 
+insert into SINIESTRO_COBERTURA
+   values('21','26','12');
+insert into SINIESTRO_COBERTURA
+   values('22','30','10');
+   insert into SINIESTRO_COBERTURA
+   values('23','21','12');
+   insert into SINIESTRO_COBERTURA
+   values('24','24','12');
+   insert into SINIESTRO_COBERTURA
+   values('25','29','12');
+   insert into SINIESTRO_COBERTURA
+   values('26','27','12');
+   insert into SINIESTRO_COBERTURA
+   values('27','23','7');
+   insert into SINIESTRO_COBERTURA
+   values('28','22','12');
+   insert into SINIESTRO_COBERTURA
+   values('29','26','12');
+   insert into SINIESTRO_COBERTURA
+   values('30','25','11');
