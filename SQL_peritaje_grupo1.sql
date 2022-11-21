@@ -265,8 +265,6 @@ insert into COBERTURA
 insert into COBERTURA 
     values('10','Herido grave acc','4000');
 insert into COBERTURA 
-    values('10','Fallecido acc','14000');
-insert into COBERTURA 
     values('11','Inundacion','5000');
 insert into COBERTURA 
     values('12','Incendio','5000');
@@ -282,6 +280,7 @@ insert into COBERTURA
     values('17','Invalidez transitoria','5000');
 insert into COBERTURA 
     values('18','Asistencia medica','5000');
+
 
 
 select * from ASEGURADORA;
@@ -380,7 +379,7 @@ VALUES ('29', '12', '1', '2', '13', '2', 'Incendio', '20220620', '20220625', '',
 INSERT into SINIESTRO
 VALUES ('30', '14', '3', '1', '7', '3', 'Rotura de tejado', '20221115', '20221117', '', '4','RR99098887','Melodi ','777854698','Plaza de Castilla 44, 1B');
 
-
+select*from SINIESTRO
 
 --inserto datos tabla Siniestro_Cobertura:
 
