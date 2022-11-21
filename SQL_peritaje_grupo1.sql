@@ -15,7 +15,7 @@ GO
 drop table if exists ASEGURADORA;
 CREATE TABLE ASEGURADORA(
         IdAseguradora int not null,
-		cif varchar(15),
+		cif varchar(15) unique,
 		Nombre varchar(30) not null,
 		contacto varchar(30),
 		telefono varchar(15),
@@ -25,7 +25,7 @@ CREATE TABLE ASEGURADORA(
 drop table if exists CLIENTE;
 CREATE TABLE CLIENTE(
         IdCliente int not null,
-		cif varchar(15),
+		cif varchar(15) unique,
 		Nombre varchar(30) not null,
 		contacto varchar(30),
 		telefono varchar(15),
@@ -35,7 +35,7 @@ CREATE TABLE CLIENTE(
 drop table if exists ASEGURADO;
 CREATE TABLE ASEGURADO(
         IdAsegurado int not null,
-		dni varchar(15),
+		dni varchar(15) unique,
 		Nombre varchar(30) not null,
 		contacto varchar(30),
 		telefono varchar(15),
@@ -45,7 +45,7 @@ CREATE TABLE ASEGURADO(
 drop table if exists PERITO;
 CREATE TABLE PERITO(
         IdPerito int not null,
-		DNI varchar(15),
+		DNI varchar(15) unique,
 		Nombre varchar(30) not null,
 		contacto varchar(30),
 		telefono varchar(15),
@@ -456,7 +456,7 @@ insert into SINIESTRO_COBERTURA
     insert into SINIESTRO_COBERTURA
    values('20','20','15');
 
-select*from SINIESTRO_COBERTURA
+
 
 
 insert into SINIESTRO_COBERTURA
@@ -480,3 +480,4 @@ insert into SINIESTRO_COBERTURA
    insert into SINIESTRO_COBERTURA
    values('30','25','11');
 
+   select*from SINIESTRO_COBERTURA
