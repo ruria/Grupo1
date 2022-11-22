@@ -675,6 +675,14 @@ from ASEGURADO as A
 Where A.Nombre like 'José Luis Torrente'
 order by Fecha_siniestro;
 
+--ACCIDENTES QUE HAN SUFRIDO LOS ASEGURADOS:
+SELECT A.IdAsegurado, A.Nombre, S.descripcion
+FROM SINIESTRO AS S
+  LEFT OUTER JOIN ASEGURADO AS A
+    ON S.IdASEGURADO = A.IdAsegurado
+WHERE S.IdSiniestro IS NOT NULL;
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------
 -- Creo procedimiento para que asigne un perito a los siniestros con estado 2 de revisado
@@ -749,3 +757,5 @@ where IdPerito =2
 */
 
 -----------------------------------------------------------------------------------------
+
+
