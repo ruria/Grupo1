@@ -5,6 +5,7 @@
 -- Marcela Rojas
 -- Rafa Martinez
 
+use master;
 DROP DATABASE IF exists PERITAJEGRUPO1;
 CREATE DATABASE PERITAJEGRUPO1;
 
@@ -97,7 +98,7 @@ CREATE TABLE SINIESTRO(
 		Fecha_siniestro datetime,
 		Fecha_apertura datetime,
 		Fecha_cierre datetime,
-		IdPerito int not null,
+		IdPerito int,
 		CodPoliza varchar(70),
 		nombre_contacto varchar(70),
 		telefono_contacto varchar (15),
@@ -566,4 +567,6 @@ insert into SINIESTRO_COBERTURA
    insert into SINIESTRO_COBERTURA
    values('30','25','11');
 
-   select*from SINIESTRO_COBERTURA
+   select IdSiniestro, IdEstado, IdRamo, Fecha_siniestro, Fecha_apertura, IdPerito from SINIESTRO
+
+
