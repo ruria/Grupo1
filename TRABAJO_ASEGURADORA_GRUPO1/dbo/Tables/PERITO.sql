@@ -5,6 +5,9 @@
     [contacto]  VARCHAR (30) NULL,
     [telefono]  VARCHAR (15) NULL,
     [num_casos] INT          NOT NULL,
-    PRIMARY KEY CLUSTERED ([IdPerito] ASC)
+    PRIMARY KEY CLUSTERED ([IdPerito] ASC),
+    UNIQUE NONCLUSTERED ([DNI] ASC)
 );
+
+
 

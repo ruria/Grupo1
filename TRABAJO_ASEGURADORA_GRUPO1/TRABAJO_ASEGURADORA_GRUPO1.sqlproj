@@ -58,6 +58,7 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\CLIENTE.sql" />
@@ -66,5 +67,11 @@
     <Build Include="dbo\Tables\RAMO.sql" />
     <Build Include="dbo\Tables\PERITO.sql" />
     <Build Include="dbo\Tables\COBERTURA.sql" />
+    <Build Include="dbo\Tables\SINIESTRO_COBERTURA.sql" />
+    <Build Include="dbo\Tables\LÍNEA_FACTURAS.sql" />
+    <Build Include="dbo\Tables\FACTURAS.sql" />
+    <Build Include="dbo\Tables\ESTADO.sql" />
+    <Build Include="dbo\Tables\ASEGURADO.sql" />
+    <Build Include="dbo\Stored Procedures\asignacion.sql" />
   </ItemGroup>
 </Project>
