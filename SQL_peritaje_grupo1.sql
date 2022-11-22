@@ -749,3 +749,16 @@ where IdPerito =2
 */
 
 -----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-- creamos un indice para el dni de asegurado, el cif de clientes y cif de aseguradora
+
+
+create nonclustered index idx_dni_asegurado
+on asegurado (dni);
+
+create nonclustered index idx_cif_clientes
+on cliente (cif);
+
+create nonclustered index idx_cif_aseguradora
+on aseguradora (cif);
+
