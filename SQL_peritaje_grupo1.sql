@@ -139,31 +139,33 @@ CREATE TABLE SINIESTRO_COBERTURA(
 );
 
 drop table if exists FACTURAS;
-CREATE TABLE FACTURAS(
-IdFactura int not null,
-IdSiniestro int not null,
-IdCliente int not null,
-		cif varchar(15) unique,
-		Nombre varchar(30) not null,
-		dirección varchar (30) not null,
-		base_imponible decimal (10,2),
-		iva decimal (10,2),
-		monto_total decimal (10,2),
-		fecha_emisión datetime,
-		fecha_pago datetime, 
-		PRIMARY KEY (IdFactura),
-		CONSTRAINT FK_Factura_IdSiniestro FOREIGN KEY (IdSiniestro)
+CREATE TABLE FACTURAS
+ (
+	IdFactura int identity(1,1) not null,
+	IdSiniestro int not null,
+	IdCliente int not null,
+	cif varchar(15) unique,
+	Nombre varchar(30) not null,
+	dirección varchar (30) not null,
+	base_imponible decimal (10,2),
+	iva decimal (10,2),
+	monto_total decimal (10,2),
+	fecha_emisión datetime,
+	fecha_pago datetime, 
+
+	PRIMARY KEY (IdFactura),
+	CONSTRAINT FK_Factura_IdSiniestro FOREIGN KEY (IdSiniestro)
 			REFERENCES SINIESTRO (IdSiniestro)
 			on update cascade,
-		CONSTRAINT FK_Factura_IdCliente FOREIGN KEY (IdCliente)
+	CONSTRAINT FK_Factura_IdCliente FOREIGN KEY (IdCliente)
 			REFERENCES Cliente (IdCliente)
 			on update no action
-);
+ );
 
 
 drop table if exists LÍNEA_FACTURAS;
 CREATE TABLE LÍNEA_FACTURAS(
-IdLínea_Factura int not null,
+IdLínea_Factura int identity(1,1) not null,
 IdFactura int not null,
 		cantidad decimal (10,2),
 		descripción varchar (30),
