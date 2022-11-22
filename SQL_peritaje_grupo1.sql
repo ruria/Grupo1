@@ -676,4 +676,76 @@ Where A.Nombre like 'José Luis Torrente'
 order by Fecha_siniestro;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-- Creo procedimiento para que asigne un perito a los siniestros con estado 2 de revisado
+-- con el criterio de que el perito sea el que menos casos lleve actualmente
+-- y que cambie el estado 2 a estado 3
+-- OJO. El trigger de la suma de casos al perito debe funcionar.
+
+
+
+
+if OBJECT_id('DBO.asignacion','P') is not null
+     drop proc DBO.asignacion;
+go
+
+CREATE PROC DBO.asignacion
+AS
+begin
+ declare @perito as int;
+	   
+
+ declare @num as int;
+ set @num = (SELECT count(IdEstado)
+              FROM SINIESTRO 
+		      where IdEstado = 2);
+ declare @IdSiniestro as int;
+
+print @perito;
+print @num;
+print @IdSiniestro
+
+  WHILE ( @num > 0 )
+   BEGIN
+          set @perito = (select top(1) IdPerito
+							from perito 
+							order by num_casos asc);
+
+		  set @IdSiniestro = (SELECT top(1) IdSiniestro
+                      FROM SINIESTRO 
+		               where IdEstado = 2 );
+           
+		  update SINIESTRO 
+	          set IdEstado = 3,
+		          IdPerito=@perito
+		      where IdSiniestro = @IdSiniestro;
+		  
+	     set @num = @num-1
+   END
+print @num
+
+ RETURN;
+END;
+
+select * from perito;
+select * from siniestro where IdEstado=2 or idEstado = 3;
+
+execute DBO.asignacion
+
+/*
+update siniestro 
+set IdEstado = 2,
+    Idperito = 4
+where IdSiniestro = 22;
+
+update siniestro 
+set IdEstado = 2,
+    Idperito = 4
+where IdSiniestro = 29;
+
+update perito 
+set num_casos =0
+where IdPerito =2
+*/
+
+-----------------------------------------------------------------------------------------
