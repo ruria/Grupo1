@@ -234,7 +234,7 @@ end;
 INSERT INTO ASEGURADO
 VALUES ('1','11111111A','Rafael Nadal','Calle Tenis 5','651248795');
 INSERT INTO ASEGURADO
-VALUES ('2','11111112A','Cristino Ronaldo','Calle Humilde 23','612345677');
+VALUES ('2','11111112A','Cristiano Ronaldo','Calle Humilde 23','612345677');
 INSERT INTO ASEGURADO
 VALUES ('3','11111113A','Manolete','Calle Sol 6','612547985');
 INSERT INTO ASEGURADO
@@ -420,21 +420,21 @@ VALUES ('10','12','10','1','10','3','Incendio del motor','20220910','20221010','
 
 
 insert into SINIESTRO
-  values('11','12','8','1','3','2','Inundacion del piso de arriba','20220210','20221010','','1','Jo99098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
+  values('11','12','8','1','3','2','Inundacion del piso de arriba','20220210','20221010','','1','Jo99098887','Mariano Marianito Solera','777854698','Plaza de Castilla 44, 1B');
 insert into SINIESTRO
-  values('12','14','5','1','1','1','Inflamacion del higado','20220510','20221012','','2','K9098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
+  values('12','14','5','1','1','1','Inflamacion del higado','20220510','20221012','','2','K9098887','Paco Martinez Soria','777854698','Plaza de Huelva 33, 2B');
 insert into SINIESTRO
-  values('13','13','2','1','6','3','Atropello a peaton','20220810','20221013','','3','M99098887','Lucas Martinez','777854698','Plaza de Castilla 44, 1B');
+  values('13','13','2','1','6','3','Atropello a peaton','20220810','20221013','','3','M99098887','Que pasa Lucas','777854698','Plaza de Numancia 44, 3B');
 insert into SINIESTRO
-  values('14','11','7','1','2','2','Incencio en cocina','20220910','20221113','','1','N88098887','Pepe Martinez','777854698','Plaza de Castilla 44, 1B');
+  values('14','11','7','1','2','2','Incencio en cocina','20220910','20221113','','1','N88098887','Pepe Martinez','777854698','Plaza de Mérida 44, 1B');
 insert into SINIESTRO
-  values('15','12','6','1','1','1','Parálisis en pierna','20220710','20221110','','4','Oo99098887','Jose Ruiz','777854698','Plaza de Castilla 44, 1B');
+  values('15','12','6','1','1','1','Parálisis en pierna','20220710','20221110','','4','Oo99098887','Jose Ruiz','777854698','Plaza de Cañadio 44, 1B');
  insert into SINIESTRO
-  values('16','14','5','1','8','3','Choque frontal cruce','20220610','20221109','','1','Po99098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
+  values('16','14','5','1','8','3','Choque frontal cruce','20220610','20221109','','1','Po99098887','Lucas Grijander','777854698','Plaza de la Reina  4, 6B');
  insert into SINIESTRO
-  values('17','12','8','1','20','2','Robo de joyas en casa','20220811','20221108','','2','Qo99098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
+  values('17','12','8','1','20','2','Robo de joyas en casa','20220811','20221108','','2','Qo99098887','Dan Yi','777854698','Plaza de Pablo 34, 1c');
 insert into SINIESTRO
-  values('18','13','1','1','18','1','Gripe prolongada','20220911','20221106','','1','Ro99098887','Alfredo Martí','777854698','Plaza de Castilla 44, 1B');
+  values('18','13','1','1','18','1','Gripe prolongada','20220911','20221106','','1','Ro99098887','Alfredo Martí','777854698','calle Londres 4, 113 B');
  insert into SINIESTRO
   values('19','14','4','1','12','2','Incendio en dormitorio','20220721','20221103','','3','So99098887','Juan Alamo','777854698','Plaza de Valencia 44, 1B');
 insert into SINIESTRO
