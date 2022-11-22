@@ -764,3 +764,93 @@ on cliente (cif);
 create nonclustered index idx_cif_aseguradora
 on aseguradora (cif);
 
+
+-- Creo procedimiento para que CREE FACTURAS
+if OBJECT_id('DBO.facturacion','P') is not null
+     drop proc DBO.facturacion;
+go
+
+CREATE PROC DBO.facturacion
+AS
+begin
+	   
+
+ declare @num as int;
+ set @num = (SELECT count(IdEstado)
+              FROM SINIESTRO 
+		      where IdEstado = 5);
+ declare @IdSiniestro as int;
+  declare @IdCliente as int;
+    declare @cif as varchar(15);
+	declare @nombre as varchar(30);
+	declare @direccion as varchar(30);
+	
+	declare @monto as decimal(10,2);
+	declare @fechapg as datetime;
+	declare @base as decimal(10,2);
+    declare @iva as decimal(10,2);
+    declare @fechaem as datetime;
+		
+print @num;
+
+  WHILE ( @num > 0 )
+   BEGIN
+
+		  set @IdSiniestro = (SELECT top(1) IdSiniestro
+                      FROM SINIESTRO 
+		               where IdEstado = 5 );
+		  set @IdCliente =(select IdCliente 
+		                       from siniestro 
+							   where IdSiniestro = @IdSiniestro);
+		  set @cif = (select c.cif
+		                 from siniestro as s
+					       join
+						      cliente as c
+						   on s.IdCliente = c.IdCliente
+						 where s.IdSiniestro=@IdSiniestro);
+
+		  set @nombre = (select c.nombre
+		                    from siniestro as s
+					          join
+						         cliente as c
+						      on s.IdCliente = c.IdCliente
+						     where s.IdSiniestro=@IdSiniestro);
+
+		  set @direccion = (select c.dirección
+		                        from siniestro as s
+					               join
+						             cliente as c
+						           on s.IdCliente = c.IdCliente
+						        where s.IdSiniestro=@IdSiniestro);
+
+		   set @monto = @base * (1+@iva);
+		   set @fechapg = @fechaem + 60;
+				  
+		  UPDATE SINIESTRO 
+	          set IdEstado = 6
+		      where IdSiniestro = @IdSiniestro;
+
+		  INSERT into FACTURAS (IdSiniestro,IdCliente,cif,Nombre,dirección,
+		                        base_imponible,iva,monto_total,fecha_emisión,fecha_pago)
+		    VALUES(@IdSiniestro,@IdCliente,@cif,@nombre,@direccion,@base,@iva,@monto,@fechaem,@fechapg);
+
+		   set @num = @num -1
+   END
+print @num
+
+ RETURN;
+END;
+
+
+
+update Siniestro
+    set IdEstado =5
+	where IdSiniestro = 27;
+
+EXECUTE DBO.facturacion
+   declare @base as decimal(10,2);
+declare @iva as decimal(10,2);
+declare @fechaem as datetime;
+set @base = 1000;
+   set @iva = 0.21;
+   set @fechaem = '20221004';
