@@ -450,7 +450,7 @@ VALUES ('21', '12', '2', '1', '25', '2', 'Incendio', '20220305', '20220307', '',
 INSERT into SINIESTRO
 VALUES ('22', '11', '1', '2', '1', '1', 'Accidente de coche', '20220905', '20220908', '', '4','rr99098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
 INSERT into SINIESTRO
-VALUES ('23', '13', '6', '1', '11', '2', 'Choque', '20221105', '20221109', '', '4','uu99098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
+VALUES ('23', '13', '6', '1', '11', '2', 'Rotura de tejado', '20221105', '20221109', '', '4','uu99098887','Alfredo Martinez','777854698','Plaza de Castilla 44, 1B');
 INSERT into SINIESTRO
 VALUES ('24', '13', '2', '3', '13', '3', 'Incendio', '20220605', '20220612', '', '4','kk99098887','Manolo el del bombo','777854698','Plaza de Castilla 44, 1B');
 INSERT into SINIESTRO
@@ -464,7 +464,7 @@ VALUES ('28', '12', '9', '1', '22', '2', 'Rotura de tejado', '20221001', '202210
 INSERT into SINIESTRO
 VALUES ('29', '12', '1', '2', '13', '2', 'Incendio', '20220620', '20220625', '', '4','jjj098887','Alfredo Martinello','777854698','Plaza de Castilla 44, 1B');
 INSERT into SINIESTRO
-VALUES ('30', '14', '3', '1', '7', '3', 'Rotura de tejado', '20221115', '20221117', '', '4','RR99098887','Melodi ','777854698','Plaza de Castilla 44, 1B');
+VALUES ('30', '14', '3', '1', '7', '3', 'Choque', '20221115', '20221117', '', '4','RR99098887','Melodi','777854698','Plaza de Castilla 44, 1B');
 
 select*from SINIESTRO
 
