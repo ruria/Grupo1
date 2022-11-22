@@ -570,3 +570,108 @@ insert into SINIESTRO_COBERTURA
    select IdSiniestro, IdEstado, IdRamo, Fecha_siniestro, Fecha_apertura, IdPerito from SINIESTRO
 
 
+   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   --CONSULTAS:
+   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--COSULTA PARA CONOCER EL NÚMERO DE SINIESTROS POR TIPOLOGÍA (RAMO): ACCIDENTES DE VIDA, HOGAR O COCHE:
+select *
+from SINIESTRO as S
+	join RAMO as R on R.IdRamo= S.IdRamo
+Where R.Tipo = 'Vida'
+order by Fecha_siniestro;
+
+select *
+from SINIESTRO as S
+	join RAMO as R on R.IdRamo= S.IdRamo
+Where R.Tipo = 'Hogar'
+order by Fecha_siniestro;
+
+select *
+from SINIESTRO as S
+	join RAMO as R on R.IdRamo= S.IdRamo
+Where R.Tipo = 'Coche'
+order by Fecha_siniestro;
+
+
+--TRES CONSULTAS QUE DEVUELVAN LOS SINIESTROS DE 5 EN 5 (1-5, 6-10, 11-15):
+--(FIRST 5 ROWS):
+SELECT IdSiniestro, descripcion
+FROM SINIESTRO
+ORDER BY IdSiniestro
+OFFSET 0 ROWS FETCH FIRST 5 ROWS ONLY;
+ --(ROWS 6 THROUGH 10): 
+SELECT IdSiniestro, descripcion
+FROM SINIESTRO
+ORDER BY IdSiniestro
+OFFSET 5 ROWS FETCH FIRST 5 ROWS ONLY;
+--(ROWS 11 THROUHG 15): 
+SELECT IdSiniestro, descripcion
+FROM SINIESTRO
+ORDER BY IdSiniestro
+OFFSET 10 ROWS FETCH FIRST 5 ROWS ONLY;
+
+
+--MOSTRAR LOS SINIESTROS QUE HUBO EN TEMPORADA ALTA (AGOSTO) RECOGIDOS ENTRE EL 1 DE AGOSTO Y EL 31 DE AGOSTO DE 2022 (FECHA DE SINIESTRO):
+SELECT IdSiniestro, Fecha_siniestro, descripcion, IdRamo
+FROM SINIESTRO
+WHERE Fecha_siniestro >= '20220801' AND Fecha_siniestro < '20220831';
+
+
+--DEVUELVE UNA TABLA CON LOS IDs Y NOMBRES DE ASEGURADOS QUE HAN TENIDO ALGÚN SINIESTRO Y DEVUELVE ADEMÁS EL NÚMERO DE SINIESTRO Y LA FECHA. ORDENA POR NÚMERO DE SINIESTRO:
+--(USO INNER JOIN):
+Use PERITAJEGRUPO1;
+select A.IdAsegurado, A.Nombre, S.IdSiniestro, S.Fecha_siniestro
+from ASEGURADO as A
+Inner join SINIESTRO as S
+on A.IdAsegurado=S.[IdAsegurado]
+order by S.IdSiniestro
+
+
+----DEVUELVE UNA TABLA CON LOS IDs, NOMBRE DEL ASEGURADO Y EN CASO DE TENER ALGÚN SINIESTRO, EL NÚMERO DE SINIESTRO Y LA FECHA.
+--EN CASO DE NO TENER SINIESTRO, DEVOLVER NULO EN LAS COLUMNAS DE ID Y FECHA DE SINIESTRO. ORDENAR POR NÚMERO DE SINIESTRO.
+--(USO LEFT JOIN):
+Use PERITAJEGRUPO1;
+select A.IdAsegurado, A.Nombre, S.IdSiniestro, S.Fecha_siniestro
+from ASEGURADO as A
+Left join SINIESTRO as S
+on A.IdAsegurado=S.[IdAsegurado]
+order by S.IdSiniestro
+--(USO RIGHT JOIN):
+Use PERITAJEGRUPO1;
+select A.IdAsegurado, A.Nombre, S.IdSiniestro, S.Fecha_siniestro
+from SINIESTRO as S
+Right join ASEGURADO as A
+on A.IdAsegurado=S.[IdAsegurado]
+order by S.IdSiniestro
+
+
+--CÁLCULOS VARIADOS PARA CONOCER SINIESTROS DE ALGUNOS ASEGURADOS, ORDENADOS DE MANERA DESCENDENTE:
+--(MODO DE INTERPRETACIÓN DE UN NOMBRE DE PILA DE UN SUJETO):
+select *
+from ASEGURADO as A
+	join SINIESTRO as S on A.IdAsegurado= S.IdAsegurado
+Where A.Nombre like 'J_sé%'
+order by Fecha_siniestro;
+
+--(MODO DE INTERPRETACIÓN DE LA LETRA INICIAL DEL NOMBRE DE PILA DE UN SUJETO):
+select *
+from ASEGURADO as A
+	join SINIESTRO as S on A.IdAsegurado= S.IdAsegurado
+Where A.Nombre like 'J%'
+order by Fecha_siniestro;
+
+--(MODO DE INTERPRETACIÓN DE LA LETRA INICIAL DEL APELLIDO DE UN SUJETO):
+select *
+from ASEGURADO as A
+	join SINIESTRO as S on A.IdAsegurado= S.IdAsegurado
+Where A.Nombre like '% B%'
+order by Fecha_siniestro;
+
+--(MODO DE INTERPRETACIÓN DE NOMBRE Y APELLIDOS COMPLETO DE UN SUJETO):
+select *
+from ASEGURADO as A
+	join SINIESTRO as S on A.IdAsegurado= S.IdAsegurado
+Where A.Nombre like 'José Luis Torrente'
+order by Fecha_siniestro;
+
